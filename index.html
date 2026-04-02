@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>曹县天润家具有限公司 - 工厂简介</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #e67e22;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: #e67e22;
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555041463-a403c3c6c6a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* 主要内容区域 */
+        section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #e67e22;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .company-info, .factory-info, .products, .advantages {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            background-color: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card h3 i {
+            color: #3498db;
+        }
+        
+        /* 产品展示 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #7f8c8d;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        /* 核心优势 */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .advantage-card {
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            transition: all 0.3s;
+        }
+        
+        .advantage-card:hover {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .advantage-card:hover h3, .advantage-card:hover i {
+            color: #e67e22;
+        }
+        
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .advantage-card h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: #e67e22;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #e67e22;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .contact-info li i {
+            color: #e67e22;
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 10px 5px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .company-info, .factory-info, .products, .advantages {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-couch"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>曹县天润家具有限公司</h1>
+                    <p>Tianrun Furniture Co., Ltd.</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#company">公司信息</a></li>
+                    <li><a href="#factory">工厂概况</a></li>
+                    <li><a href="#products">主要产品</a></li>
+                    <li><a href="#advantages">核心优势</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <h2>匠心制造，诚信经营</h2>
+            <p>曹县天润家具有限公司是一家专业从事家具设计、生产与销售的综合型企业，位于中国家具产业集聚区——山东省菏泽市曹县，致力于为全球客户提供高品质的家具产品与解决方案。</p>
+        </div>
+    </section>
+
+    <!-- 公司信息 -->
+    <section id="company" class="container">
+        <div class="section-title">
+            <h2>公司信息</h2>
+        </div>
+        <div class="company-info">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-building"></i> 公司注册</h3>
+                    <p>曹县天润家具有限公司成立于2021年06月11日，注册地位于山东省菏泽市曹县朱洪庙镇范李村朱梁路中段路南66号，法定代表人为郜于龙。</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-clipboard-list"></i> 经营范围</h3>
+                    <p>一般项目：家具制造；家居用品制造；家具销售；木竹材加工机械制造；木材加工。</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-bullseye"></i> 企业宗旨</h3>
+                    <p>我们始终以"匠心制造，诚信经营"为宗旨，期待与国内外客户建立长期合作关系，共创美好家居生活。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工厂概况 -->
+    <section id="factory" class="container">
+        <div class="section-title">
+            <h2>工厂概况</h2>
+        </div>
+        <div class="factory-info">
+            <p>工厂占地面积6200平方米，拥有现代化标准厂房与先进的生产设备。我们坚持智能化、精益化生产理念，从原材料筛选到成品出厂，全程实施严格的质量管控体系。</p>
+            <br>
+            <p>生产线涵盖木材加工、裁切、打磨、组装、包覆、检测等多个环节，确保每一件产品都符合高标准工艺要求。依托曹县家具产业集聚区的区位与供应链优势，我们致力于为全球客户提供高品质的家具产品与解决方案。</p>
+            <br>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+                <div style="flex: 1; min-width: 250px; background-color: #f1f8ff; padding: 15px; border-radius: 8px;">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;"><i class="fas fa-ruler-combined"></i> 工厂面积</h3>
+                    <p style="font-size: 1.2rem;">6200 平方米</p>
+                </div>
+                <div style="flex: 1; min-width: 250px; background-color: #f1f8ff; padding: 15px; border-radius: 8px;">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;"><i class="fas fa-industry"></i> 生产理念</h3>
+                    <p>智能化、精益化生产</p>
+                </div>
+                <div style="flex: 1; min-width: 250px; background-color: #f1f8ff; padding: 15px; border-radius: 8px;">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;"><i class="fas fa-check-circle"></i> 质量管控</h3>
+                    <p>全程严格质量管控体系</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要产品 -->
+    <section id="products" class="container">
+        <div class="section-title">
+            <h2>主要产品</h2>
+        </div>
+        <div class="products">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #e8f4fc;">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>软包家具</h3>
+                        <p>包括休闲椅、功能单椅等，采用优质海绵与环保面料，坐感舒适，款式多样。</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #f0f7e6;">
+                        <i class="fas fa-border-style"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>床板条</h3>
+                        <p>提供多种规格的实木或复合材质床板条，结构稳固，透气性好，适配各类床架。</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #f9f2e8;">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>沙发</h3>
+                        <p>涵盖现代简约、北欧、轻奢等多种风格，注重框架牢固度、填充物弹性与面料耐用性。</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #f5e8f0;">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>压缩沙发</h3>
+                        <p>采用可压缩或折叠设计，便于运输与存储，展开后恢复原有舒适度与造型，适合电商与小户型需求。</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #e8f7f0;">
+                        <i class="fas fa-footstool"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>脚蹬</h3>
+                        <p>作为沙发配套或独立使用，设计精巧，移动方便，提升居家舒适度。</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background-color: #f0e8f7;">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>软床</h3>
+                        <p>主打布艺与皮艺软床，床头采用柔软包覆，结合稳固床箱，营造温馨卧室氛围。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section id="advantages" class="container">
+        <div class="section-title">
+            <h2>核心优势</h2>
+        </div>
+        <div class="advantages">
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>全链条能力</h3>
+                    <p>经营范围覆盖家具制造、家居用品制造、家具销售、木竹材加工机械制造及木材加工，具备从原材料到成品的完整产业链控制力。</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>研发与定制</h3>
+                    <p>拥有专业设计团队，可根据市场需求与客户来图进行定制开发，支持OEM/ODM合作。</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-award"></i>
+                    <h3>质量与环保</h3>
+                    <p>严格执行国家环保标准，所有材料均通过安全检测，确保产品健康无害。</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>服务保障</h3>
+                    <p>提供从打样到批量生产的全程跟踪服务，交货准时，响应迅速。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>曹县天润家具有限公司</h3>
+                    <p>一家专业从事家具设计、生产与销售的综合型企业，致力于为全球客户提供高品质的家具产品与解决方案。</p>
+                </div>
+                <div class="footer-column">
+                    <h3>联系方式</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 地址：山东省菏泽市曹县朱洪庙镇范李村朱梁路中段路南66号</li>
+                        <li><i class="fas fa-user-tie"></i> 法定代表人：郜于龙</li>
+                        <li><i class="fas fa-calendar-alt"></i> 成立日期：2021年06月11日</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>主要产品</h3>
+                    <ul>
+                        <li><a href="#products">软包家具</a></li>
+                        <li><a href="#products">床板条</a></li>
+                        <li><a href="#products">沙发系列</a></li>
+                        <li><a href="#products">压缩沙发</a></li>
+                        <li><a href="#products">脚蹬</a></li>
+                        <li><a href="#products">软床</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2021-2023 曹县天润家具有限公司 版权所有 | 匠心制造，诚信经营</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 添加产品卡片悬停效果增强
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.product-img i');
+                icon.style.transform = 'scale(1.1)';
+                icon.style.transition = 'transform 0.3s';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.product-img i');
+                icon.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
